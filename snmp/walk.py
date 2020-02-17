@@ -1,4 +1,4 @@
-from config.configuracao import ip, port, oid
+from configuracao.configuracao import ip, port, oid
 from pysnmp.hlapi import *
 import os, json, datetime
 

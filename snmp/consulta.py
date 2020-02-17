@@ -1,4 +1,4 @@
-from config.configuracao import ip, port, consultas_a_serem_feitas, resultado_consultas
+from configuracao.configuracao import ip, port, consultas_a_serem_feitas, resultado_consultas
 from pysnmp.hlapi import *
 import sys, json
 
