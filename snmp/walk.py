@@ -30,25 +30,25 @@ def walk_from_oid(ip=ip, port=port, oid=oid, engine=SnmpEngine(), context=Contex
     return dicionario, erro, _logger
     
 def write_to_json(dicionario, erro, _logger, ip=ip):
-    if (os.path.exists(ip)):
+    if (os.path.exists("repo/" + ip)):
         if not erro:
-            with open(ip + "/dicionario.json", "w+") as fp:
+            with open("repo/" + ip + "/dicionario.json", "w+") as fp:
                 json.dump(di, fp, ensure_ascii=False, indent=4)
 
         else:
-             with open(ip + "/logger.txt", "a+") as fp:
+             with open("repo/" + ip + "/logger.txt", "a+") as fp:
                 for _log in _logger:
                     fp.write(str(_log) + '  @' + str(datetime.datetime.now()) + '\n')
 
     else:
         if not erro:
-            os.mkdir(ip)
-            with open(ip + "/dicionario.json", "w+") as fp:
+            os.mkdir("repo/" + ip)
+            with open("repo/" + ip + "/dicionario.json", "w+") as fp:
                 json.dump(di, fp, ensure_ascii=False, indent=4)
                 
         else:
-            os.mkdir(ip)
-            with open(ip + "/logger.txt", "a+") as fp:
+            os.mkdir("repo/" + ip)
+            with open("repo/" + ip + "/logger.txt", "a+") as fp:
                 for _log in _logger:
                     fp.write(str(_log) + '  @' + str(datetime.datetime.now()) + '\n')
 
