@@ -36,7 +36,7 @@ def get_and_save_to_json( mib, host=ip, port=port, engine=SnmpEngine(), context=
                 k = 0
                 for varBind in varBinds:
                     k +=1
-                    print("%s = %s" % varBind)
+                    # print("%s = %s" % varBind)
                     dicionario.update({feature + " " + str(k): str(varBind[1])})
 
     with open(resultado_consultas, "w") as fp:
